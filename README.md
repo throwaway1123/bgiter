@@ -25,9 +25,6 @@ mkdir dist
 then,
 ```
 yarn run build
-```
-
-```
 yarn run start
 ```
 
