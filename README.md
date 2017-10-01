@@ -17,6 +17,12 @@ yarn install
 
 ## Testing/Running
 
+If it doesn't exist:
+```
+mkdir dist
+```
+
+then,
 ```
 yarn run build
 ```
