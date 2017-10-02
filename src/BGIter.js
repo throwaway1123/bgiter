@@ -19,10 +19,13 @@ class BGIter {
   }
 
   run() {
-    this.timer();
+    const color = this.getUniqueBg();
+    BGIter.setBg(color);
+    if (this.count >= this.iterations) return;
+    else setTimeout(() => this.run(), this.interval);
   }
 
-  bgColor() {
+  getUniqueBg() {
     let color;
     do {
       color = BGIter.genColor();
@@ -30,13 +33,6 @@ class BGIter {
     this.usedColors[color] = true;
     this.count++;
     return color;
-  }
-
-  timer() {
-    const color = this.bgColor();
-    BGIter.setBg(color);
-    if (this.count >= this.iterations) return;
-    else setTimeout(() => this.timer(this.interval, this.iterations), this.interval);
   }
 }
 
